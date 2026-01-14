@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+#define EMPLOYEE_NAME_STR_LEN_MAX           256
+
+class employee {
+  public:
+    void set_employee_id(int num) {
+      employee_id = num;
+    }
+
+    void get_employee_details(void) {
+      printf("============================================\n");
+      printf("EMPLOYEE_ID: %d\n", employee_id);
+      printf("============================================\n");
+    }
+
+  private:
+    int employee_id;
+    char employee_name[EMPLOYEE_NAME_STR_LEN_MAX];
+};
+
+int main (int argc, char *argv[]) {
+
+  employee employee_1;
+  employee_1.set_employee_id(12);
+  employee_1.get_employee_details();
+
+  return 0;
+}
