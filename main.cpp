@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <cstring>
 
 #define EMPLOYEE_NAME_STR_LEN_MAX           256
 
@@ -6,6 +7,10 @@ class employee {
   public:
     void set_employee_id(int num) {
       employee_id = num;
+    }
+
+    void set_employee_name(char *name) {
+      strcpy(employee_name, name);
     }
 
     void get_employee_details(void) {
