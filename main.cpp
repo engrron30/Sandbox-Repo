@@ -15,7 +15,8 @@ class employee {
 
     void get_employee_details(void) {
       printf("============================================\n");
-      printf("EMPLOYEE_ID: %d\n", employee_id);
+      printf("EMPLOYEE_ID:   %d\n", employee_id);
+      printf("EMPLOYEE_NAME: %s\n", employee_name);
       printf("============================================\n");
     }
 
