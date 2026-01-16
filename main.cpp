@@ -59,8 +59,16 @@ class employee {
     bool is_initialized;
 };
 
-int main (int argc, char *argv[]) {
+void example_array();
 
+int main (int argc, char *argv[]) {
+  example_array();
+
+  return 0;
+}
+
+void example_array()
+{
   employee employee_list[EMPLOYEE_LIST_LEN];
 
   employee_list[0].set_employee_id(1);
@@ -86,5 +94,4 @@ int main (int argc, char *argv[]) {
     employee_list[i].get_employee_details();
   }
 
-  return 0;
 }
