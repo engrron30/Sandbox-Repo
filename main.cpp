@@ -49,9 +49,21 @@ class employee {
 int main (int argc, char *argv[]) {
 
   employee employee_list[EMPLOYEE_LIST_LEN];
+
+  employee_list[0].set_employee_id(1);
+  employee_list[0].set_employee_name("Microchip Technology Incorporated");
+
+  employee_list[1].set_employee_id(2);
+  employee_list[1].set_employee_name("Cavite State University - Bacoor Campus");
+
+  employee_list[2].set_employee_id(3);
+  employee_list[2].set_employee_name("Sercomm Philippines Incorporated");
+
   employee_list[3].set_employee_id(4);
   employee_list[3].set_employee_name("Hitachi Digital Payment Solutions Inc.");
-  employee_list[3].get_employee_details();
+
+  for (int i = 0; i < EMPLOYEE_LIST_LEN; i++)
+    employee_list[i].get_employee_details();
 
   return 0;
 }
