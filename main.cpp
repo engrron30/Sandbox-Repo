@@ -2,6 +2,7 @@
 #include <cstring>
 
 #define EMPLOYEE_NAME_STR_LEN_MAX           256
+#define EMPLOYEE_LIST_LEN                   10
 #define ENDLINE_NUM_OF_EQUAL_MAX            40
 #define ENDLINE_CHAR                        '='
 
@@ -47,10 +48,10 @@ class employee {
 
 int main (int argc, char *argv[]) {
 
-  employee employee_1;
-  employee_1.set_employee_id(4);
-  employee_1.set_employee_name("Hitachi Digital Payment Solutions Inc.");
-  employee_1.get_employee_details();
+  employee employee_list[EMPLOYEE_LIST_LEN];
+  employee_list[3].set_employee_id(4);
+  employee_list[3].set_employee_name("Hitachi Digital Payment Solutions Inc.");
+  employee_list[3].get_employee_details();
 
   return 0;
 }
