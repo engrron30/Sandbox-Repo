@@ -2,6 +2,7 @@
 #include <cstring>
 
 #define EMPLOYEE_NAME_STR_LEN_MAX           256
+#define ENDLINE_NUM_OF_EQUAL_MAX            40
 
 class employee {
   public:
@@ -15,10 +16,10 @@ class employee {
     }
 
     void get_employee_details(void) {
-      printf("============================================\n");
+      display_border_line();
       printf("EMPLOYEE_ID:   %d\n", employee_id);
       display_employee_name_based_on_length();
-      printf("============================================\n");
+      display_border_line();
     }
 
     void display_employee_name_based_on_length(void)
@@ -29,6 +30,13 @@ class employee {
       if (newline_num == 0)
         printf("EMPLOYEE_NAME: %s\n", employee_name);
 
+    }
+
+    void display_border_line()
+    {
+      for (int i = 0; i < ENDLINE_NUM_OF_EQUAL_MAX; i++)
+        putchar('=');
+      putchar('\n');
     }
 
   private:
