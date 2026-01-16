@@ -9,6 +9,7 @@ class employee {
       employee_id = num;
     }
 
+    /* This function gives ISO C++ warning */
     void set_employee_name(char *name) {
       strcpy(employee_name, name);
     }
