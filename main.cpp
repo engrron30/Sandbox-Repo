@@ -3,6 +3,7 @@
 
 #define EMPLOYEE_NAME_STR_LEN_MAX           256
 #define ENDLINE_NUM_OF_EQUAL_MAX            40
+#define ENDLINE_CHAR                        '='
 
 class employee {
   public:
@@ -16,10 +17,10 @@ class employee {
     }
 
     void get_employee_details(void) {
-      display_border_line();
+      display_border_line(ENDLINE_NUM_OF_EQUAL_MAX);
       printf("EMPLOYEE_ID:   %d\n", employee_id);
       display_employee_name_based_on_length();
-      display_border_line();
+      display_border_line(ENDLINE_NUM_OF_EQUAL_MAX);
     }
 
     void display_employee_name_based_on_length(void)
@@ -32,10 +33,10 @@ class employee {
 
     }
 
-    void display_border_line()
+    void display_border_line(int max_num)
     {
-      for (int i = 0; i < ENDLINE_NUM_OF_EQUAL_MAX; i++)
-        putchar('=');
+      for (int i = 0; i < max_num; i++)
+        putchar(ENDLINE_CHAR);
       putchar('\n');
     }
 
