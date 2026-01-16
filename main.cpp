@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <iostream>
 #include <cstring>
 
 #define EMPLOYEE_NAME_STR_LEN_MAX           256
@@ -15,6 +16,17 @@ class employee {
     /* This function gives ISO C++ warning */
     void set_employee_name(char *name) {
       strcpy(employee_name, name);
+    }
+
+    void set_employee_initialized_state()
+    {
+      if (!is_initialized)
+        is_initialized = true;
+    }
+
+    bool get_employee_initialized_state()
+    {
+      return is_initialized;
     }
 
     void get_employee_details(void) {
@@ -44,6 +56,7 @@ class employee {
   private:
     int employee_id;
     char employee_name[EMPLOYEE_NAME_STR_LEN_MAX];
+    bool is_initialized;
 };
 
 int main (int argc, char *argv[]) {
@@ -52,19 +65,23 @@ int main (int argc, char *argv[]) {
 
   employee_list[0].set_employee_id(1);
   employee_list[0].set_employee_name("Microchip Technology Incorporated");
+  employee_list[0].set_employee_initialized_state();
 
   employee_list[1].set_employee_id(2);
   employee_list[1].set_employee_name("Cavite State University - Bacoor Campus");
+  employee_list[1].set_employee_initialized_state();
 
   employee_list[2].set_employee_id(3);
   employee_list[2].set_employee_name("Sercomm Philippines Incorporated");
+  employee_list[2].set_employee_initialized_state();
 
   employee_list[3].set_employee_id(4);
   employee_list[3].set_employee_name("Hitachi Digital Payment Solutions Inc.");
+  employee_list[3].set_employee_initialized_state();
 
   for (int i = 0; i < EMPLOYEE_LIST_LEN; i++) {
-    if (employee_list[i] == NULL)
-      break;
+    if (!employee_list[i].get_employee_initialized_state())
+      continue;
 
     employee_list[i].get_employee_details();
   }
