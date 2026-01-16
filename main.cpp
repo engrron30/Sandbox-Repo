@@ -17,8 +17,23 @@ class employee {
     void get_employee_details(void) {
       printf("============================================\n");
       printf("EMPLOYEE_ID:   %d\n", employee_id);
+      display_employee_name_based_on_length();
       printf("EMPLOYEE_NAME: %s\n", employee_name);
       printf("============================================\n");
+    }
+
+    void display_employee_name_based_on_length()
+    {
+      int name_len = 0;
+      for (int i = 0; i < EMPLOYEE_NAME_STR_LEN_MAX; i++) {
+        if (employee_name[i] == '\0')
+          break;
+        name_len++;
+      }
+
+#ifdef DEBUG
+      printf("EMPLOYEE_NAME_LEN = %d\n", name_len);
+#endif
     }
 
   private:
