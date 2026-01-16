@@ -2,9 +2,11 @@
 #include <iostream>
 #include <cstring>
 
+using namespace std;
+
 #define EMPLOYEE_NAME_STR_LEN_MAX           256
 #define EMPLOYEE_LIST_LEN                   10
-#define ENDLINE_NUM_OF_EQUAL_MAX            40
+#define ENDLINE_NUM_OF_EQUAL_MAX            60
 #define ENDLINE_CHAR                        '='
 
 class employee {
@@ -13,9 +15,8 @@ class employee {
       employee_id = num;
     }
 
-    /* This function gives ISO C++ warning */
-    void set_employee_name(char *name) {
-      strcpy(employee_name, name);
+    void set_employee_name(string name) {
+      employee_name = name;
     }
 
     void set_employee_initialized_state()
@@ -38,7 +39,7 @@ class employee {
 
     void display_employee_name_based_on_length(void)
     {
-      int name_len = strlen(employee_name);
+      int name_len = employee_name.length();
       int newline_num = name_len / EMPLOYEE_NAME_STR_LEN_MAX;
 
       if (newline_num == 0)
@@ -55,7 +56,7 @@ class employee {
 
   private:
     int employee_id;
-    char employee_name[EMPLOYEE_NAME_STR_LEN_MAX];
+    string employee_name;
     bool is_initialized;
 };
 
