@@ -28,7 +28,8 @@ class employee {
 int main (int argc, char *argv[]) {
 
   employee employee_1;
-  employee_1.set_employee_id(12);
+  employee_1.set_employee_id(4);
+  employee_1.set_employee_name("Hitachi Digital Payment Solutions Inc.");
   employee_1.get_employee_details();
 
   return 0;
