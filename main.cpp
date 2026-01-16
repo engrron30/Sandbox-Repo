@@ -43,7 +43,8 @@ class employee {
       int newline_num = name_len / EMPLOYEE_NAME_STR_LEN_MAX;
 
       if (newline_num == 0)
-        printf("EMPLOYEE_NAME: %s\n", employee_name);
+        cout << "EMPLOYEE_NAME: " << employee_name << endl;
+        //printf("EMPLOYEE_NAME: %s\n", employee_name);
 
     }
 
