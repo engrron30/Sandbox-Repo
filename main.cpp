@@ -62,8 +62,12 @@ int main (int argc, char *argv[]) {
   employee_list[3].set_employee_id(4);
   employee_list[3].set_employee_name("Hitachi Digital Payment Solutions Inc.");
 
-  for (int i = 0; i < EMPLOYEE_LIST_LEN; i++)
+  for (int i = 0; i < EMPLOYEE_LIST_LEN; i++) {
+    if (employee_list[i] == NULL)
+      break;
+
     employee_list[i].get_employee_details();
+  }
 
   return 0;
 }
